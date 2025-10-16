@@ -1,6 +1,6 @@
 import { hashSync }  from 'bcrypt';
 import {generateJWT} from '../../helpers/generateJWT.js';
-import {connectDB} from '../dataBase.js';
+import { connectDB } from '../../dataBase.js';
 
 export async function createUser(req, res) {
   try{

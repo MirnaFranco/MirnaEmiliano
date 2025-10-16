@@ -1,6 +1,6 @@
 import { compareSync }  from 'bcrypt';
 import { generateJWT } from '../../helpers/generateJWT.js';
-import { connectDB } from '../dataBase.js'; // Importa la función para conectar a la base de datos
+import { connectDB } from '../../dataBase.js'; // Importa la función para conectar a la base de datos
 
 export async function login(req, res) {
   try{

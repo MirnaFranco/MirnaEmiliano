@@ -1,5 +1,5 @@
-import {validateTokenJWT} from '../../helpers/validateJWT.js';
-import {connectDB} from '../dataBase.js';
+import { validateTokenJWT } from "../../helpers/validateToken.js";
+import { connectDB } from '../../dataBase.js';
   
   export async function removeUser (req, res) {
    try { 
