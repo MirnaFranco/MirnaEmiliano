@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa de Formosa con Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #mapa-formosa {
+            height: 500px;
+            width: 80%; /* Ejemplo de ancho */
+            margin: 20px auto; /* Centrar el mapa */
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ubicaciones Destacadas en Formosa</h1>
+    <div id="mapa-formosa"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Coordenadas y Zoom
+        const latitudFormosa = -26.17;
+        const longitudFormosa = -58.17;
+        const zoomInicial = 13; 
+
+        // 1. Inicializar el mapa
+        const mapa = L.map('mapa-formosa').setView([latitudFormosa, longitudFormosa], zoomInicial);
+
+        // 2. Añadir la capa base de OpenStreetMap
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(mapa);
+
+        // 3. Añadir un marcador: Plaza San Martín
+        const latitudPlaza = -26.1822;
+        const longitudPlaza = -58.1764;
+        
+        L.marker([latitudPlaza, longitudPlaza])
+         .addTo(mapa)
+         .bindPopup("<b>Plaza San Martín</b><br>El corazón de la ciudad.")
+         .openPopup();
+         
+        // 4. Añadir otro marcador: Estadio Centenario
+        const latitudEstadio = -26.1751;
+        const longitudEstadio = -58.2045;
+        
+        L.marker([latitudEstadio, longitudEstadio])
+         .addTo(mapa)
+         .bindPopup("<b>Estadio Centenario</b><br>Sede de eventos deportivos.");
+
+    </script>
+</body>
+</html>
