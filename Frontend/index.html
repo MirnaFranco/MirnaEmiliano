@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio - Seguridad Ciudadana</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <h2>Seguridad Formosa</h2>
+    </div>
+
+    <div class="navbar-right">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="mapa.html">Mapa</a>
+      <a href="reportar.html">Reportar</a>
+      <a href="estadisticas.html">Estadísticas</a>
+      <a href="contacto.html">Contacto</a>
+
+      <!-- Botones de sesión -->
+      <a href="login.html" id="login-btn">Iniciar Sesión</a>
+      <a href="register.html" id="register-btn">Registrarse</a>
+      <button id="logout-btn" style="display:none;">Cerrar Sesión</button>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="container">
+    <h1>Plataforma de Seguridad Ciudadana</h1>
+    <p>Reportá, visualizá y colaborá por una ciudad más segura.</p>
+
+    <div class="buttons">
+      <a href="login.html" class="btn">Iniciar Sesión</a>
+      <a href="register.html" class="btn">Registrarse</a>
+      <button id="anonBtn" class="btn anon">Ingresar como Anónimo</button>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    // Botón modo anónimo
+    document.getElementById("anonBtn").addEventListener("click", () => {
+      localStorage.setItem("modoAnonimo", "true");
+      alert("Ingresaste en modo anónimo. Tus reportes serán anónimos.");
+      window.location.href = "mapa.html";
+    });
+
+    // Lógica para mostrar/ocultar botones de sesión
+    const logoutBtn = document.getElementById("logout-btn");
+    const loginBtn = document.getElementById("login-btn");
+    const registerBtn = document.getElementById("register-btn");
+
+    const userLogueado = localStorage.getItem("usuarioActivo");
+
+    if (userLogueado) {
+      logoutBtn.style.display = "inline-block";
+      loginBtn.style.display = "none";
+      registerBtn.style.display = "none";
+    }
+
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("usuarioActivo");
+      localStorage.removeItem("modoAnonimo");
+      alert("Sesión cerrada correctamente.");
+      location.reload();
+    });
+  </script>
+
+</body>
+</html>
