@@ -1,0 +1,119 @@
+/* GENERAL */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  color: #212529;
+}
+
+/* CONTENEDORES */
+.container, .form-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 60px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* TITULOS */
+h1, h2 { color: #0f5132; }
+
+/* INPUTS */
+input, textarea, select {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* BOTONES */
+.btn {
+  display: inline-block;
+  background-color: #0f5132;
+  color: white;
+  padding: 10px 15px;
+  margin: 10px 5px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn:hover { background-color: #198754; }
+
+.btn.anon {
+  background-color: #28a745;
+}
+.btn.anon:hover { background-color: #1e7e34; }
+
+/* MENSAJES */
+.mensaje {
+  display: none;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+}
+.mensaje.error { background: #ffe0e0; color: #dc3545; }
+.mensaje.exito { background: #e0ffe0; color: #28a745; }
+
+/* MAPA */
+#mapa-formosa {
+  height: 500px;
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #0f5132;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-left h2 { margin: 0; font-size: 20px; }
+.navbar-right a, .navbar-right button {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.navbar-right a:hover, .navbar-right button:hover { text-decoration: underline; }
+.navbar a.active { text-decoration: underline; font-weight: bold; }
+
+/* LOGOUT */
+.logout {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.logout:hover { background-color: #b30000; }
+
+/* ALERTA EMERGENTE */
+.alerta {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #dc3545;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  z-index: 9999;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  display: none;
+}

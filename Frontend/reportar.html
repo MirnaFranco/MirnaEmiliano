@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reportar Incidente</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-left"><h2>Seguridad Formosa</h2></div>
+  <div class="navbar-right">
+    <a href="index.html">Inicio</a>
+    <a href="mapa.html">Mapa</a>
+    <a href="reportar.html" class="active">Reportar</a>
+    <a href="estadisticas.html">Estadísticas</a>
+    <button id="logout-btn">Cerrar Sesión</button>
+  </div>
+</nav>
+
+<div class="form-container">
+  <h2>Reportar Incidente</h2>
+  <div id="mensaje" class="mensaje"></div>
+
+  <form id="reportForm">
+    <input type="text" id="titulo" placeholder="Título del incidente" required>
+    <textarea id="descripcion" placeholder="Descripción del incidente" required></textarea>
+    <input type="number" step="any" id="latitud" placeholder="Latitud" required>
+    <input type="number" step="any" id="longitud" placeholder="Longitud" required>
+    <select id="tipo" required>
+      <option value="">Seleccionar tipo</option>
+      <option value="Robo">Robo</option>
+      <option value="Violencia">Violencia</option>
+      <option value="Accidente">Accidente</option>
+      <option value="Otro">Otro</option>
+    </select>
+    <button type="submit" class="btn">Reportar</button>
+  </form>
+</div>
+
+<div id="alerta" class="alerta"></div>
+
+<script src="js/reportar.js"></script>
+</body>
+</html>

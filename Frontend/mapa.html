@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa de Incidentes</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-left"><h2>Seguridad Formosa</h2></div>
+  <div class="navbar-right">
+    <a href="index.html">Inicio</a>
+    <a href="mapa.html" class="active">Mapa</a>
+    <a href="reportar.html">Reportar</a>
+    <a href="estadisticas.html">Estadísticas</a>
+    <button id="logout-btn">Cerrar Sesión</button>
+  </div>
+</nav>
+
+<h1>Mapa de Incidentes</h1>
+<div id="mapa-formosa"></div>
+<div id="alerta" class="alerta"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="js/mapa.js"></script>
+</body>
+</html>
